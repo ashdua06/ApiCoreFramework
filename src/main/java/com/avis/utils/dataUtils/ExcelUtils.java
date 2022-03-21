@@ -42,7 +42,7 @@ public class ExcelUtils {
 
     public int getSheetColNum(String fileName,String sheetName) throws IOException{
 
-        FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+"/testData/"+fileName);
+        FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+"/testData/excel/"+fileName);
         ExcelWBook = new XSSFWorkbook(fs);
         ExcelWSheet = ExcelWBook.getSheet(sheetName);
         return ExcelWSheet.getRow(0).getPhysicalNumberOfCells();
@@ -51,7 +51,7 @@ public class ExcelUtils {
     // Pass file path as argument and sheet Name from which data need to be retrieved.
     public String[][] getSheetData(String fileName,String sheetName) throws IOException{
 
-        FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+"/testData/"+fileName);
+        FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+"/testData/excel/"+fileName);
         ExcelWBook = new XSSFWorkbook(fs);
         ExcelWSheet = ExcelWBook.getSheet(sheetName);
         DataFormatter df = new DataFormatter();
@@ -75,7 +75,7 @@ public class ExcelUtils {
 
     public List<Object> getSheetDataAsList(String fileName,String sheetName){
         try {
-            FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/testData/" + fileName);
+            FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "/testData/excel/" + fileName);
             ExcelWBook = new XSSFWorkbook(fs);
             ExcelWSheet = ExcelWBook.getSheet(sheetName);
             DataFormatter df = new DataFormatter();
